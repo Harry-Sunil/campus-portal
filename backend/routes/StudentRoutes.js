@@ -47,13 +47,13 @@ router.post("/register", upload.single("resume"), async (req, res) => {
       message: "Student Registered Successfully",
     });
   } catch (error) {
-    console.log(error);
+  console.log("Student Register Error:", error);
 
-    res.status(500).json({
-      message: "Registration Failed",
-      error: error.message,
-    });
-  }
+  res.status(500).json({
+    message: "Registration Failed",
+    error: error.message,
+  });
+}
 });
 // VIEW ALL STUDENTS
 router.get("/view", async (req, res) => {
