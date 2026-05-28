@@ -33,7 +33,7 @@ const [job, setJob] = useState({
 
   const fetchJobs = () => {
     axios
-      .get("${import.meta.env.VITE_API_URL}/job/view")
+      .get("https://campus-portal-0pxd.onrender.com/job/view")
       .then((res) => {
         setJobs(res.data);
       })
@@ -49,7 +49,7 @@ const [job, setJob] = useState({
   const addOrUpdateJob = () => {
     if (editId === null) {
       axios
-        .post("${import.meta.env.VITE_API_URL}/job/add", job)
+        .post("https://campus-portal-0pxd.onrender.com/job/add", job)
         .then((res) => {
           alert(res.data.message);
           setJob({
@@ -66,7 +66,7 @@ const [job, setJob] = useState({
         });
     } else {
       axios
-        .put(`${import.meta.env.VITE_API_URL}/job/update/${editId}`, job)
+        .put(`https://campus-portal-0pxd.onrender.com/job/update/${editId}`, job)
         .then((res) => {
           alert(res.data.message);
           setJob({
@@ -87,7 +87,7 @@ const [job, setJob] = useState({
 
   const deleteJob = (id) => {
     axios
-      .delete(`${import.meta.env.VITE_API_URL}/job/delete/${id}`)
+      .delete(`https://campus-portal-0pxd.onrender.com/job/delete/${id}`)
       .then((res) => {
         alert(res.data.message);
         fetchJobs();

@@ -14,7 +14,7 @@ const Jobs = () => {
 
   useEffect(() => {
     axios
-      .get("${import.meta.env.VITE_API_URL}/job/view")
+      .get("https://campus-portal-0pxd.onrender.com/job/view")
       .then((res) => {
         setJobs(res.data);
       })
@@ -25,7 +25,7 @@ const Jobs = () => {
 
   const applyJob = (value) => {
     axios
-      .post("${import.meta.env.VITE_API_URL}/application/apply", {
+      .post("https://campus-portal-0pxd.onrender.com/application/apply", {
         studentName: student?.name,
         email: student?.email,
         company: value.company,

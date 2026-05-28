@@ -18,7 +18,7 @@ const AdminApplications = () => {
 
   const fetchApplications = () => {
     axios
-      .get("${import.meta.env.VITE_API_URL}/application/view")
+      .get("https://campus-portal-0pxd.onrender.com/application/view")
       .then((res) => {
         setApplications(res.data);
       })
@@ -33,7 +33,7 @@ const AdminApplications = () => {
 
   const updateStatus = (id, newStatus) => {
     axios
-      .put(`${import.meta.env.VITE_API_URL}/application/update/${id}`, {
+      .put(`https://campus-portal-0pxd.onrender.com/application/update/${id}`, {
         status: newStatus,
       })
       .then((res) => {

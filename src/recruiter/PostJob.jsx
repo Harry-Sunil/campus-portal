@@ -21,7 +21,7 @@ const PostJob = () => {
 
   const postJob = () => {
     axios
-      .post("${import.meta.env.VITE_API_URL}/job/add", job)
+      .post("https://campus-portal-0pxd.onrender.com/job/add", job)
       .then((res) => {
         alert(res.data.message);
 

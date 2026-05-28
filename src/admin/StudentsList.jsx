@@ -21,7 +21,7 @@ const StudentsList = () => {
 
   const fetchStudents = () => {
     axios
-      .get("${import.meta.env.VITE_API_URL}/student/view")
+      .get("https://campus-portal-0pxd.onrender.com/student/view")
       .then((res) => {
         setStudents(res.data);
       })
@@ -36,7 +36,7 @@ const StudentsList = () => {
 
   const approveStudent = (id) => {
     axios
-      .put(`${import.meta.env.VITE_API_URL}/student/approve/${id}`)
+      .put(`https://campus-portal-0pxd.onrender.com/student/approve/${id}`)
       .then((res) => {
         alert(res.data.message);
         fetchStudents();

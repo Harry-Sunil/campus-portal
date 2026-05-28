@@ -18,7 +18,7 @@ const Applications = () => {
 
   useEffect(() => {
     axios
-      .get("${import.meta.env.VITE_API_URL}/application/view")
+      .get("https://campus-portal-0pxd.onrender.com/application/view")
       .then((res) => {
   const student = JSON.parse(localStorage.getItem("student"));
 

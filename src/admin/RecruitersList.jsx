@@ -18,7 +18,7 @@ const RecruitersList = () => {
 
   const fetchRecruiters = () => {
     axios
-      .get("${import.meta.env.VITE_API_URL}/recruiter/view")
+      .get("https://campus-portal-0pxd.onrender.com/recruiter/view")
       .then((res) => {
         setRecruiters(res.data);
       })
@@ -33,7 +33,7 @@ const RecruitersList = () => {
 
   const approveRecruiter = (id) => {
     axios
-      .put(`${import.meta.env.VITE_API_URL}/recruiter/approve/${id}`)
+      .put(`https://campus-portal-0pxd.onrender.com/recruiter/approve/${id}`)
       .then((res) => {
         alert(res.data.message);
         fetchRecruiters();

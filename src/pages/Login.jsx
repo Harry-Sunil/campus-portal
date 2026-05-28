@@ -28,7 +28,7 @@ const Login = () => {
   const loginUser = () => {
     if (loginData.role === "student") {
       axios
-        .post("${import.meta.env.VITE_API_URL}/student/login", loginData)
+        .post("https://campus-portal-0pxd.onrender.com/student/login", loginData)
         .then((res) => {
           alert(res.data.message);
 
@@ -46,7 +46,7 @@ const Login = () => {
     } else if (loginData.role === "admin") {
 
       axios
-        .post("${import.meta.env.VITE_API_URL}/admin/login", loginData)
+        .post("https://campus-portal-0pxd.onrender.com/admin/login", loginData)
         .then((res) => {
           alert(res.data.message);
 
@@ -64,7 +64,7 @@ const Login = () => {
     } else if (loginData.role === "recruiter") {
 
       axios
-        .post("${import.meta.env.VITE_API_URL}/recruiter/login", loginData)
+        .post("https://campus-portal-0pxd.onrender.com/recruiter/login", loginData)
         .then((res) => {
           alert(res.data.message);
 

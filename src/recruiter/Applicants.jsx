@@ -22,7 +22,7 @@ const Applicants = () => {
 
   const fetchApplicants = () => {
     axios
-      .get("${import.meta.env.VITE_API_URL}/application/view")
+      .get("https://campus-portal-0pxd.onrender.com/application/view")
       .then((res) => {
         console.log("Recruiter:", recruiter);
         console.log("All Applications:", res.data);
@@ -46,7 +46,7 @@ const Applicants = () => {
 
   const updateStatus = (id, newStatus) => {
     axios
-      .put(`${import.meta.env.VITE_API_URL}/application/update/${id}`, {
+      .put(`https://campus-portal-0pxd.onrender.com/application/update/${id}`, {
         status: newStatus,
       })
       .then((res) => {
@@ -170,7 +170,7 @@ const Applicants = () => {
 
                     <TableCell>
                       <a
-                        href={`${import.meta.env.VITE_API_URL}/uploads/${value.resume}`}
+                        href={`https://campus-portal-0pxd.onrender.com/uploads/${value.resume}`}
                         target="_blank"
                         rel="noreferrer"
                         style={{

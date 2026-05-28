@@ -43,7 +43,7 @@ const Register = () => {
       formData.append("resume", resume);
 
       axios
-        .post("${import.meta.env.VITE_API_URL}/student/register", formData)
+        .post("https://campus-portal-0pxd.onrender.com/student/register", formData)
         .then((res) => {
           alert(res.data.message);
 navigate("/login");
@@ -54,7 +54,7 @@ navigate("/login");
         });
     } else if (user.role === "recruiter") {
       axios
-        .post("${import.meta.env.VITE_API_URL}/recruiter/register", user)
+        .post("https://campus-portal-0pxd.onrender.com/recruiter/register", user)
         .then((res) => {
           alert(res.data.message);
 navigate("/login");
