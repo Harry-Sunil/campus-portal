@@ -21,7 +21,7 @@ const StudentsList = () => {
 
   const fetchStudents = () => {
     axios
-      .get("http://localhost:5000/student/view")
+      .get("${import.meta.env.VITE_API_URL}/student/view")
       .then((res) => {
         setStudents(res.data);
       })
@@ -36,7 +36,7 @@ const StudentsList = () => {
 
   const approveStudent = (id) => {
     axios
-      .put(`http://localhost:5000/student/approve/${id}`)
+      .put(`${import.meta.env.VITE_API_URL}/student/approve/${id}`)
       .then((res) => {
         alert(res.data.message);
         fetchStudents();

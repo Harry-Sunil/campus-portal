@@ -28,7 +28,7 @@ const Login = () => {
   const loginUser = () => {
     if (loginData.role === "student") {
       axios
-        .post("http://localhost:5000/student/login", loginData)
+        .post("${import.meta.env.VITE_API_URL}/student/login", loginData)
         .then((res) => {
           alert(res.data.message);
 
@@ -46,7 +46,7 @@ const Login = () => {
     } else if (loginData.role === "admin") {
 
       axios
-        .post("http://localhost:5000/admin/login", loginData)
+        .post("${import.meta.env.VITE_API_URL}/admin/login", loginData)
         .then((res) => {
           alert(res.data.message);
 
@@ -64,7 +64,7 @@ const Login = () => {
     } else if (loginData.role === "recruiter") {
 
       axios
-        .post("http://localhost:5000/recruiter/login", loginData)
+        .post("${import.meta.env.VITE_API_URL}/recruiter/login", loginData)
         .then((res) => {
           alert(res.data.message);
 

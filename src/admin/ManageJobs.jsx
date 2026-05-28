@@ -33,7 +33,7 @@ const [job, setJob] = useState({
 
   const fetchJobs = () => {
     axios
-      .get("http://localhost:5000/job/view")
+      .get("${import.meta.env.VITE_API_URL}/job/view")
       .then((res) => {
         setJobs(res.data);
       })
@@ -49,7 +49,7 @@ const [job, setJob] = useState({
   const addOrUpdateJob = () => {
     if (editId === null) {
       axios
-        .post("http://localhost:5000/job/add", job)
+        .post("${import.meta.env.VITE_API_URL}/job/add", job)
         .then((res) => {
           alert(res.data.message);
           setJob({
@@ -66,7 +66,7 @@ const [job, setJob] = useState({
         });
     } else {
       axios
-        .put(`http://localhost:5000/job/update/${editId}`, job)
+        .put(`${import.meta.env.VITE_API_URL}/job/update/${editId}`, job)
         .then((res) => {
           alert(res.data.message);
           setJob({
@@ -87,7 +87,7 @@ const [job, setJob] = useState({
 
   const deleteJob = (id) => {
     axios
-      .delete(`http://localhost:5000/job/delete/${id}`)
+      .delete(`${import.meta.env.VITE_API_URL}/job/delete/${id}`)
       .then((res) => {
         alert(res.data.message);
         fetchJobs();

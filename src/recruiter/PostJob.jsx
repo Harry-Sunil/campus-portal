@@ -21,7 +21,7 @@ const PostJob = () => {
 
   const postJob = () => {
     axios
-      .post("http://localhost:5000/job/add", job)
+      .post("${import.meta.env.VITE_API_URL}/job/add", job)
       .then((res) => {
         alert(res.data.message);
 

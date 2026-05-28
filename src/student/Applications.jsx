@@ -18,7 +18,7 @@ const Applications = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/application/view")
+      .get("${import.meta.env.VITE_API_URL}/application/view")
       .then((res) => {
   const student = JSON.parse(localStorage.getItem("student"));
 

@@ -22,7 +22,7 @@ const Applicants = () => {
 
   const fetchApplicants = () => {
     axios
-      .get("http://localhost:5000/application/view")
+      .get("${import.meta.env.VITE_API_URL}/application/view")
       .then((res) => {
         console.log("Recruiter:", recruiter);
         console.log("All Applications:", res.data);
@@ -46,7 +46,7 @@ const Applicants = () => {
 
   const updateStatus = (id, newStatus) => {
     axios
-      .put(`http://localhost:5000/application/update/${id}`, {
+      .put(`${import.meta.env.VITE_API_URL}/application/update/${id}`, {
         status: newStatus,
       })
       .then((res) => {
@@ -170,7 +170,7 @@ const Applicants = () => {
 
                     <TableCell>
                       <a
-                        href={`http://localhost:5000/uploads/${value.resume}`}
+                        href={`${import.meta.env.VITE_API_URL}/uploads/${value.resume}`}
                         target="_blank"
                         rel="noreferrer"
                         style={{

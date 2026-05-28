@@ -18,7 +18,7 @@ const AdminApplications = () => {
 
   const fetchApplications = () => {
     axios
-      .get("http://localhost:5000/application/view")
+      .get("${import.meta.env.VITE_API_URL}/application/view")
       .then((res) => {
         setApplications(res.data);
       })
@@ -33,7 +33,7 @@ const AdminApplications = () => {
 
   const updateStatus = (id, newStatus) => {
     axios
-      .put(`http://localhost:5000/application/update/${id}`, {
+      .put(`${import.meta.env.VITE_API_URL}/application/update/${id}`, {
         status: newStatus,
       })
       .then((res) => {

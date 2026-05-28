@@ -43,7 +43,7 @@ const Register = () => {
       formData.append("resume", resume);
 
       axios
-        .post("http://localhost:5000/student/register", formData)
+        .post("${import.meta.env.VITE_API_URL}/student/register", formData)
         .then((res) => {
           alert(res.data.message);
 navigate("/login");
@@ -54,7 +54,7 @@ navigate("/login");
         });
     } else if (user.role === "recruiter") {
       axios
-        .post("http://localhost:5000/recruiter/register", user)
+        .post("${import.meta.env.VITE_API_URL}/recruiter/register", user)
         .then((res) => {
           alert(res.data.message);
 navigate("/login");

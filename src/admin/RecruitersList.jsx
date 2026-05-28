@@ -18,7 +18,7 @@ const RecruitersList = () => {
 
   const fetchRecruiters = () => {
     axios
-      .get("http://localhost:5000/recruiter/view")
+      .get("${import.meta.env.VITE_API_URL}/recruiter/view")
       .then((res) => {
         setRecruiters(res.data);
       })
@@ -33,7 +33,7 @@ const RecruitersList = () => {
 
   const approveRecruiter = (id) => {
     axios
-      .put(`http://localhost:5000/recruiter/approve/${id}`)
+      .put(`${import.meta.env.VITE_API_URL}/recruiter/approve/${id}`)
       .then((res) => {
         alert(res.data.message);
         fetchRecruiters();
