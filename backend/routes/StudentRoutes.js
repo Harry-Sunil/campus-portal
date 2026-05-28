@@ -33,26 +33,28 @@ router.put("/approve/:id", async (req, res) => {
     });
   }
 });
-
 // REGISTER STUDENT
 router.post("/register", upload.single("resume"), async (req, res) => {
-try {
-   const newStudent = new Student({
-  ...req.body,
-  resume: req.file.filename,
-});
+  try {
+    const newStudent = new Student({
+      ...req.body,
+      resume: req.file ? req.file.filename : "",
+    });
+
     await newStudent.save();
 
     res.status(200).json({
       message: "Student Registered Successfully",
     });
   } catch (error) {
+    console.log(error);
+
     res.status(500).json({
       message: "Registration Failed",
+      error: error.message,
     });
   }
 });
-
 // VIEW ALL STUDENTS
 router.get("/view", async (req, res) => {
   try {
